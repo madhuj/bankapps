@@ -1,0 +1,66 @@
+<% if flash[:notice] %>
+<div class="notice"><img src ="http://thepracticalexpert.com/wp-content/uploads/2012/08/bigstock_Success_3665920.jpg" width="150px" height="150px"/>
+  <div class="alert alert-success">
+    <%= flash[:notice] %></div>
+    <% end %>
+
+    
+<% if flash[:alert] %>
+<div class="notice"><img src ="http://thepracticalexpert.com/wp-content/uploads/2012/08/bigstock_Success_3665920.jpg" width="150px" height="150px"/>
+  <div class="alert alert-success">
+    <%= flash[:alert] %></div>
+    <% end %>
+
+
+
+           <div class="row">
+	
+	       <div class="col-sm-5">
+		   <div class="well well-sm">
+		   <p>
+				<strong>Name:</strong>
+				<%= @article.title %>
+			</p>
+			
+			<p>
+				<strong>Account no:</strong>
+				<%= @article.text %>
+			</p>
+
+             <p>
+				<strong>firstname:</strong>
+				<%= @article.firstname %>
+			</p>
+			
+			<p>
+				<strong>lastname:</strong>
+				<%= @article.lastname %>
+			</p>
+			
+			<p>
+				<strong>state:</strong>
+				<%= @article.state %>
+			</p>
+			
+			<p>
+				<strong>pincode:</strong>
+				<%= @article.pincode %>
+			</p>
+			
+			<p>
+				<strong>phone:</strong>
+				<%= @article.phone %>
+			</p>
+			
+           <p>
+				<strong>country:</strong>
+				<%= @article.country %>
+			</p>
+			
+			
+
+			<%= link_to 'Back to list of Account', articles_path %>
+
+		</div>
+	</div>
+</div>

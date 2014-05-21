@@ -1,0 +1,26 @@
+
+<%= form_for :article, url: articles_path do |f| %>
+
+<div class="tb">
+
+  <%= f.label 'Bank Name:' %><br>
+  <%= f.text_field :title %><br>
+  <%= f.label 'security code:' %><br>
+  <%= f.select :text, [[14554],[24455],[3445],[4454],[5444],[64454],[7444],[6787],[14554],[34455],[6445],[7454],[8444],[67454],[7944],[5678]] %></br>
+  <%= f.label 'First Name:' %><br>
+  <%= f.text_field :firstname %><br> 
+  <%= f.label 'Last Name:' %><br>
+  <%= f.text_field :lastname %> <br>
+  <%= f.label 'state:' %><br>
+  <%= f.text_field :state %> <br>
+  <%= f.label 'Pincode:' %><br>
+  <%= f.text_field :pincode %> <br>
+  <%= f.label 'Phone:' %><br>
+  <%= f.text_field :phone %><br>
+  <%= f.label 'country:' %><br>
+  <%= f.text_field :country %><br>
+  
+   <%= f.submit 'Save',:class => 'btn btn-success' %>
+ </div>
+<% end %>
+

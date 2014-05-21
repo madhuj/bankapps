@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>App</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+ 
+
+ 
+  <div class="header">
+
+    <ul class="nav nav-pills pull-right">
+      <% if current_user %>
+      <%= link_to 'Sign Out',  log_out_path,  :class => "btn btn-sm btn-info pull-right "%>
+      <%  elsif (controller_name == "sessions") && (action_name == ("new")) %>
+      <%= link_to 'Sign Up',  sign_up_path, :class => "btn btn-sm btn-info pull-right"   %>
+      <%  elsif (controller_name == "users") && (action_name == ("new")) %>
+      <%= link_to 'Sign In', log_in_path, :class => "btn btn-sm btn-info pull-right"%>
+      <% else %>
+      <%= link_to 'Sign Up',  sign_up_path,remote: true, :class => "btn btn-sm btn-info pull-right"%>   
+      <%= link_to 'Sign In',  log_in_path, remote: true, :class => "btn btn-sm btn-info pull-right"%>  
+      <% end %>   
+    </ul>
+    
+    <h3>Swiss Corporation</h3>
+    <a href="http://www.hoaxorfact.com//">Home </a>|   
+    <a href="http://www.hoaxorfact.com//">About </a>|
+    <a href="http://www.hoaxorfact.com/Admin.html/">Contacts </a>|
+    <a href="http://www.hoaxorfact.com/forum/">service </a>|
+    <a href="http://casperfabricius.com/site/2010/09/30/ajax-sign-in-and-sign-up-with-devise/">Movies </a>|
+
+  </div>
+  <div class="container-outer">
+    <div class="container">
+
+      <% flash.each do |name, msg| %>
+      <div class ="msg">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <%= content_tag :div, msg, :id => "flash#{name}" %>
+      </div>
+      
+      <% end %>
+
+      <%= yield %>
+
+    </div>
+  </div>
+  <footer class="footer">
+    &copy; Copyright 2014, Qwinix technologies. 
+  </footer> 
+  <div id="product-modal" class="modal"> 
+  </body>
+  </html>
+
+
+
+
+
+
+  
