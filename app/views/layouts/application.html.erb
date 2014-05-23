@@ -17,13 +17,11 @@
     <ul class="nav nav-pills pull-right">
       <% if current_user %>
       <%= link_to 'Sign Out',  log_out_path,  :class => "btn btn-sm btn-info pull-right "%>
-      <%  elsif (controller_name == "sessions") && (action_name == ("new")) %>
-      <%= link_to 'Sign Up',  sign_up_path, :class => "btn btn-sm btn-info pull-right"   %>
-      <%  elsif (controller_name == "users") && (action_name == ("new")) %>
-      <%= link_to 'Sign In', log_in_path, :class => "btn btn-sm btn-info pull-right"%>
       <% else %>
+      <%= link_to "Sign In with Twitter","/auth/twitter",:class => "btn btn-sm btn-info pull-center" %>
       <%= link_to 'Sign Up',  sign_up_path,remote: true, :class => "btn btn-sm btn-info pull-right"%>   
-      <%= link_to 'Sign In',  log_in_path, remote: true, :class => "btn btn-sm btn-info pull-right"%>  
+      <%= link_to 'Sign In',  log_in_path, remote: true, :class => "btn btn-sm btn-info pull-right"%> 
+
       <% end %>   
     </ul>
     
