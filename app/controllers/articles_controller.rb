@@ -20,7 +20,7 @@ def create
   
   if @article.save
     flash[:notice] = "Details are  successfully created"
-    redirect_to @articles
+    redirect_to @article
   else
     flash[:alert] = "abort Please entire the details"
     render 'new'
@@ -51,11 +51,9 @@ def destroy
   redirect_to articles_path
 end
   
-
-  
   private
   def article_params
-    params.require(:article).permit(:title,:text,:firstname,:lastname, :state, :pincode,:phone,:country)
+  params.require(:article).permit(:title,:text,:firstname,:lastname, :state, :pincode,:phone,:country)
   end
 end
 

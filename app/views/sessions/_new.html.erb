@@ -3,20 +3,16 @@
 <%= link_to "sign out ", log_out_path %>
 <% else %>
 <%= link_to "Sign In with Twitter","/auth/twitter",:class => "btn btn-sm btn-info pull-center" %>
-
-<a href="https://twitter.com/" class="twitter-follow-button" data-show-count="false" data-lang="en" data-size = "large">Follow @twitterapi </a>
-<% end %> 
+<% end %>
 
 
-<a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true" data-count="none" data-via="twitterapi">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 
 
 <%= form_tag  sessions_path do %>
 
 <div class="modal-header">  
- <div class="em"> 
+  <div class="em">  
    <h1> Login </h1>
    <p>
      <%= label_tag :email %><br/>
@@ -28,13 +24,10 @@
      
      <p class="button"><%= submit_tag 'Login'%></p>
    </div>  
- </div>
+  </div>
  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
  <% end %>
 
  
- <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; 
- if (!d.getElementById(id))
-  { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script> 
-
+ 
 
